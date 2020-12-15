@@ -9,7 +9,7 @@ class Form14dayPage extends StatefulWidget {
 
 class Form14dayPageState extends State<Form14dayPage> with TickerProviderStateMixin {
   double currentOpacity = 0;
-  Animation<double> starAnimation;
+  // Animation<double> starAnimation;
   bool checkbox1 = true;
   bool checkbox2 = false;
   bool checkbox3 = true;
@@ -17,11 +17,13 @@ class Form14dayPageState extends State<Form14dayPage> with TickerProviderStateMi
   bool checkbox5 = true;
   bool checkbox6 = false;
   bool checkbox7 = true;
+  DateTime date = DateTime.now();
+  String dropdownValue = '6';
    @override
    Widget build(BuildContext context) {
-     return new MaterialApp(
-       debugShowCheckedModeBanner: false,
-       home: new Scaffold(
+    //  return new MaterialApp(
+    //    debugShowCheckedModeBanner: false,
+       return Scaffold(
          backgroundColor: Color(0xFFB3E5FC),
          appBar: AppBar(
            title: Text(""),
@@ -40,6 +42,7 @@ class Form14dayPageState extends State<Form14dayPage> with TickerProviderStateMi
         child: Container(
           padding: EdgeInsets.all(10.0),
           child: Column(children: [
+            
              Text('แบบฟอร์มสุขภาพจำนวน 14 วันเพื่อประเมินอาการหลังอาการเสี่ยงหรือต้องกักตัว',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
             Text('ท่านมีอาการดังต่อไปนี้หรือไม่',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
            Text('(หากไม่มีอาการไม่ต้องกดทำเครื่องหมายใดๆ)',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
@@ -169,49 +172,64 @@ class Form14dayPageState extends State<Form14dayPage> with TickerProviderStateMi
               SizedBox(width: 10.0),
               Text('ไม่รู้รส')
             ]),
+             SizedBox(height: 10.0),
+            Text('ระบุวันที่เริ่มมีอาการป่วย:',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
+            SizedBox(height: 10.0),
+            InkWell(
+              onTap: () async {
+                final DateTime picked = await showDatePicker(
+                  context: context,
+                  initialDate: date,
+                  firstDate: DateTime(1994),
+                  lastDate: DateTime(2101),
+                  builder: (BuildContext context, Widget child) {
+                    return Theme(
+                      data: ThemeData.dark(),
+                      child: child,
+                    );
+                  },
+                );
+                if (picked != null && picked != date)
+                  setState(() {
+                    date = picked;
+                  });
+              },
+              child: Text('$date กดเลือกวันที่'),
+            ),
+          Text('อายุของท่าน (ปี):',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
+           Container(
+  padding: EdgeInsets.only(left: 5.0, right: 5.0),
+  decoration: BoxDecoration(
+	border: Border.all(color: Colors.grey),
+	borderRadius: BorderRadius.circular(3.0)
+  ),
+  child: DropdownButton<String>(
+	value: dropdownValue,
+	isExpanded: true,
+	icon: Icon(Icons.keyboard_arrow_down, size: 22),
+	underline: SizedBox(),
+	items: <String>['6','7','8','9','10','11', '12' ,'13' ,'14' ,'15' , '16' , '17' ,'18','19','20-30','30-40','40-50','50-60'].map((String value) {
+	  return new DropdownMenuItem<String>(
+		value: value,
+		child: new Text(value),
+	  );
+	}).toList(),
+	onChanged: (value) {
+	  //Do something with this value
+	  setState(() {
+		dropdownValue = value;
+	  });
+	},
+  ),
+  
+  
+)
             
-           
           ])
+          
+          
         ),
       )
-     ));
+     );
   }
 }
-//   double currentOpacity = 0;
-//   Animation<double> starAnimation;
-//   // bool checkbox1 = true;
-//   // bool checkbox2 = false;
-//   @override
-//   Widget build(BuildContext context) {
-//     return new MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       home: new Scaffold(
-//         backgroundColor: Color(0xFFB3E5FC),
-//         appBar: AppBar(
-//           title: Text(""),
-//            actions: [
-//         // action button
-//         IconButton(
-//           icon: Image.asset('assets/icons/heart.png'),
-//           onPressed: () { },
-//         ),
-
-//       ],
-//         backgroundColor: Colors.indigo,
-//         ),
-//         body: new Center(
-//           child: Container(
-//           padding: EdgeInsets.all(10.0),
-//           child: Column(children: [
-//             Text('แบบฟอร์มสุขภาพจำนวน 14 วันเพื่อประเมินอาการหลังอาการเสี่ยงหรือต้องกักตัว',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
-//             Text('ท่านมีอาการดังต่อไปนี้หรือไม่',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
-//             Text('(หากไม่มีอาการไม่ต้องกดทำเครื่องหมายใดๆ)',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
-//            ]),
-//            ),
-          
-
-//         ),
-//       ),
-//     );
-//   }
-// }
