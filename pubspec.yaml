@@ -10,6 +10,9 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+
+  json_form_generator: "^0.0.1"
+
   mongo_dart: ^0.4.4
   # dropdownfield: ^0.0.2
   direct_select: "^1.0.0"

@@ -2,24 +2,8 @@ import 'package:flutter/material.dart';
 
 
 import 'package:flutter/cupertino.dart';
-// import 'package:flutter_svg/svg.dart';
+
 import 'package:ifightcovid19/Screens/Screening/screening_screen.dart';
-
-// void main() => runApp(MyApp());
-
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       // title: 'Flutter Demo',
-//       theme: ThemeData(
-//         primarySwatch: Colors.indigo,
-//       ),
-//       home: AssessmentresultsPage(title: 'Flutter Demo Home Page'),
-//     );
-//   }
-// }
-
 class AssessmentresultsPage extends StatefulWidget {
   AssessmentresultsPage({Key key, this.title}) : super(key: key);
 
@@ -88,7 +72,12 @@ class _AssessmentresultsPageState extends State<AssessmentresultsPage> {
                       padding: new EdgeInsets.all(25.0),
                       child: new Column(
                         children: <Widget>[
+                             Text('ผลการประเมินของคุณความเสี่ยงรวม : 1',style: TextStyle(color: Colors.green,fontWeight: FontWeight.bold,
+                fontSize: 15.5),),
+                   Text('คำแนะนำเบื้องต้น : ล้างมือ สวมหน้ากาก หลีกเลี่ยงที่แออัด',style: TextStyle(color: Colors.green,fontWeight: FontWeight.bold,
+                fontSize: 15.5),),
               Container(
+                
               margin: EdgeInsets.all(20),
               width: 500,
               height: 50,
