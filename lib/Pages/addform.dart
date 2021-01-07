@@ -116,6 +116,42 @@ import 'package:flutter/material.dart';
                 //Do something with this value
               },
             ),
+            SizedBox(height: 10.0),
+            TextFormField(
+              keyboardType: TextInputType.text,
+              decoration: InputDecoration(
+                  hintText: 'กรอกคำตอบ',
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 32.0),
+                      borderRadius: BorderRadius.circular(5.0)
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                      borderRadius: BorderRadius.circular(5.0)
+                  )
+              ),
+              onChanged: (value) {
+                //Do something with this value
+              },
+            ),
+            SizedBox(height: 10.0),
+            TextFormField(
+              keyboardType: TextInputType.text,
+              decoration: InputDecoration(
+                  hintText: 'กรอกคำตอบ',
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 32.0),
+                      borderRadius: BorderRadius.circular(5.0)
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                      borderRadius: BorderRadius.circular(5.0)
+                  )
+              ),
+              onChanged: (value) {
+                //Do something with this value
+              },
+            ),
              SizedBox(height: 10.0),
              SizedBox(height: 10.0),
              Row(mainAxisAlignment: MainAxisAlignment.center, children: [

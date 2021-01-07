@@ -20,7 +20,7 @@ class _AssessmentresultsPageState extends State<AssessmentresultsPage> {
        return new MaterialApp(
        debugShowCheckedModeBanner: false,
                 home: new Scaffold(
-                  backgroundColor: Colors.lightBlue[100],
+                  // backgroundColor: Colors.lightBlue[100],
                   appBar: new AppBar(
                     elevation: 0.0,
                     centerTitle: true,
@@ -93,24 +93,42 @@ class _AssessmentresultsPageState extends State<AssessmentresultsPage> {
                       ),
                     ),
                   ),
-                   Container(
-              margin: EdgeInsets.all(20),
-              child: FlatButton(
-                child: Text('ทำแบบประเมินตนเองอีกครั้ง',style: TextStyle(fontWeight: FontWeight.bold,
-                fontSize: 20.5),),
-                onPressed: () {
+                  SizedBox(height: 20.0),
+                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      MaterialButton(
+                       color: Colors.indigo,
+                       child: Text('ทำแบบประเมินตนเองอีกครั้ง', style: TextStyle(color: Colors.white)),
+                       onPressed: () { 
+                         Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return ScreeningScreen();
+                          },
+                        ),
+                      ); //แอดไปยังหน้า ประเมินผู้ป่วย
+                        //Do Something
+                       },
+                     ),
+                 ]),
+            //        Container(
+            //   margin: EdgeInsets.all(20),
+            //   child: FlatButton(
+            //     child: Text('ทำแบบประเมินตนเองอีกครั้ง',style: TextStyle(fontWeight: FontWeight.bold,
+            //     fontSize: 20.5),),
+            //     onPressed: () {
               
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return ScreeningScreen();
-                    },
-                  ),
-                );
-              },
-              ),
-            ), 
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) {
+            //           return ScreeningScreen();
+            //         },
+            //       ),
+            //     );
+            //   },
+            //   ),
+            // ), 
                 ],
                 
               ),

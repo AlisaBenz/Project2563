@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:ifightcovid19/Pages/tabel14day.dart';
+import 'package:intl/intl.dart';
 
 class Form14dayPage extends StatefulWidget {
   @override
@@ -20,20 +23,32 @@ class Form14dayPageState extends State<Form14dayPage> with TickerProviderStateMi
   bool checkbox7 = true;
   DateTime date = DateTime.now();
   String dropdownValue = '6';
+
+  String _timeString;
+
+  @override
+  void initState() {
+  
+    super.initState();
+    Timer.periodic(Duration(seconds: 1), (Timer t) => _getTime());
+  }
+
+  void _getTime() {
+    final String formattedDateTime =
+        DateFormat('yyyy-MM-dd').format(DateTime.now()).toString(); // (\n kk:mm:ss) เป็นตัวเวลาอยู่หลังyyyy-MM-dd
+    setState(() {
+      _timeString = formattedDateTime;
+      print(_timeString);
+    });
+  }
    @override
    Widget build(BuildContext context) {
-<<<<<<< HEAD
     return new MaterialApp(
      debugShowCheckedModeBanner: false,   
        
     home: new Scaffold(
        
-=======
-    //  return new MaterialApp(
-    //    debugShowCheckedModeBanner: false,
-       return Scaffold(
->>>>>>> 5350d12274ba5ea6eb83e56782e27abbeb3852a0
-         backgroundColor: Color(0xFFB3E5FC),
+        //  backgroundColor: Color(0xFFB3E5FC),
          appBar: AppBar(
            title: Text(""),
             actions: [
@@ -47,15 +62,24 @@ class Form14dayPageState extends State<Form14dayPage> with TickerProviderStateMi
          backgroundColor: Colors.indigo,
          ),
       body: SingleChildScrollView(
+     
         scrollDirection: Axis.vertical,
+      
+          
         child: Container(
+          
+          
           padding: EdgeInsets.all(10.0),
           child: Column(children: [
-<<<<<<< HEAD
-              Text('16 ธันวาคม 2563',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
-=======
-            
->>>>>>> 5350d12274ba5ea6eb83e56782e27abbeb3852a0
+             Text(
+          _timeString.toString(),
+             textAlign: TextAlign.center,
+           style: TextStyle(
+            fontSize: 20,
+           fontWeight: FontWeight.bold,
+            ),
+          ),
+              // Text('16 ธันวาคม 2563',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
              Text('แบบฟอร์มสุขภาพจำนวน 14 วันเพื่อประเมินอาการหลังอาการเสี่ยงหรือต้องกักตัว',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
             Text('ท่านมีอาการดังต่อไปนี้หรือไม่',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
            Text('(หากไม่มีอาการไม่ต้องกดทำเครื่องหมายใดๆ)',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
@@ -185,7 +209,6 @@ class Form14dayPageState extends State<Form14dayPage> with TickerProviderStateMi
               SizedBox(width: 10.0),
               Text('ไม่รู้รส')
             ]),
-<<<<<<< HEAD
           //    SizedBox(height: 10.0),
           //   Text('ระบุวันที่เริ่มมีอาการป่วย:',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
           //   SizedBox(height: 10.0),
@@ -289,73 +312,11 @@ class Form14dayPageState extends State<Form14dayPage> with TickerProviderStateMi
           ])
           
                     
-=======
-             SizedBox(height: 10.0),
-            Text('ระบุวันที่เริ่มมีอาการป่วย:',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
-            SizedBox(height: 10.0),
-            InkWell(
-              onTap: () async {
-                final DateTime picked = await showDatePicker(
-                  context: context,
-                  initialDate: date,
-                  firstDate: DateTime(1994),
-                  lastDate: DateTime(2101),
-                  builder: (BuildContext context, Widget child) {
-                    return Theme(
-                      data: ThemeData.dark(),
-                      child: child,
-                    );
-                  },
-                );
-                if (picked != null && picked != date)
-                  setState(() {
-                    date = picked;
-                  });
-              },
-              child: Text('$date กดเลือกวันที่'),
-            ),
-          Text('อายุของท่าน (ปี):',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
-           Container(
-  padding: EdgeInsets.only(left: 5.0, right: 5.0),
-  decoration: BoxDecoration(
-	border: Border.all(color: Colors.grey),
-	borderRadius: BorderRadius.circular(3.0)
-  ),
-  child: DropdownButton<String>(
-	value: dropdownValue,
-	isExpanded: true,
-	icon: Icon(Icons.keyboard_arrow_down, size: 22),
-	underline: SizedBox(),
-	items: <String>['6','7','8','9','10','11', '12' ,'13' ,'14' ,'15' , '16' , '17' ,'18','19','20-30','30-40','40-50','50-60'].map((String value) {
-	  return new DropdownMenuItem<String>(
-		value: value,
-		child: new Text(value),
-	  );
-	}).toList(),
-	onChanged: (value) {
-	  //Do something with this value
-	  setState(() {
-		dropdownValue = value;
-	  });
-	},
-  ),
-  
-  
-)
-            
-          ])
-          
-          
->>>>>>> 5350d12274ba5ea6eb83e56782e27abbeb3852a0
         ),
         
       )
-<<<<<<< HEAD
       
       
      ));
-=======
-     );
->>>>>>> 5350d12274ba5ea6eb83e56782e27abbeb3852a0
   }
 }

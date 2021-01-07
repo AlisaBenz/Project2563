@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ifightcovid19/Pages/Description.dart';
 import 'package:ifightcovid19/Pages/chatbot.dart';
 // import 'package:ifightcovid19/Pages/chatbot.dart';
@@ -21,100 +22,148 @@ class Body extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
              Text('ยินดีต้อนรับเข้าสู่ ifightcovid19 App',style: TextStyle(fontSize: 17.0,fontWeight: FontWeight.bold),),
-            SizedBox(height: size.height * 0.05),
+            // SizedBox(height: size.height * 0.05),
              Text(
                "กรุณาเข้าสู่ระบบ",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            // SizedBox(height: size.height * 0.05),
-            // SvgPicture.asset(
-            //   "assets/icons/doctor.svg",
-            //   height: size.height * 0.45,
-            // ),
+            SizedBox(height: size.height * 0.05),
+             SvgPicture.asset(
+              "assets/icons/doctor.svg",
+              height: size.height * 0.20,
+             ),
             SizedBox(height: 10.0),
             Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: new MaterialButton(
-                    height: 100.0,
-                    minWidth: 150.0,
-                    color: Theme.of(context).primaryColor,
-                    textColor: Colors.white,
-                    child: new Text("คัดกรอง COVID-19"),
-                    onPressed: () => {
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) =>  DescriptionPages()),
-                    )
-                    },
-                    splashColor: Colors.redAccent,
-                  )),
-                  Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: new MaterialButton(
-                    height: 100.0,
-                    minWidth: 150.0,
-                    color: Theme.of(context).primaryColor,
-                    textColor: Colors.white,
-                    child: new Text("ห้องสนทนา"),
-                    onPressed: () => {
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ChatbotPage()),
-                    )
-                    },
-                    splashColor: Colors.redAccent,
-                  )),
-              SizedBox(height: 10.0),
-            // RoundedButton(
-            //   text: "บุคคลทั่วไป",
-            //   press: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (context) {
-            //           return LoginScreen();
-            //         },
-            //       ),
-            //     );
-            //   },
-            // ),
-            //  RoundedButton(
-            //   text: "สำหรับแพทย์/พยาบาล",
-            //   // color: kPrimaryLightColor,
-            //   // textColor: Colors.black,
-            //   press: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (context) {
-            //           return SignUpScreen();
-            //         },
-            //       ),
-            //     );
-            //   },
-            // ),
-            //  RoundedButton(
-            //    text: "เมนูแชท",
-            //     //color: kPrimaryLightColor,
-            //     //textColor: Colors.black,
-            //    press: () {
-            //      Navigator.push(
-            //        context,
-            //        MaterialPageRoute(
-            //          builder: (context) {
-            //            return ChatbotPage();
-            //          },
-            //        ),
-            //      );
-            //    },
-            //  ),
-          ],
+
+      Container(
+                  width: 150,
+                  height: 100,
+                  alignment: Alignment.bottomLeft,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/icons/COVID .jpeg'),
+                        fit: BoxFit.fill),
+
+                  ),
+                 child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DescriptionPages(
+                                        )));
+                          },
+                            child: Column(
+                    children: <Widget>[
+                      Text(
+                        "คัดกรอง COVID-19",
+                        style: TextStyle(
+                            fontFamily: 'AirbnbCerealBold',
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
+                            ),
+                      ),
+                    ],
+                  ),
+                 )
+                ),
+                
+                   SizedBox(height: size.height * 0.05),
+                 
+                Container(
+                  width: 150,
+                  height: 100,
+                  alignment: Alignment.bottomLeft,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/icons/chat.png'),
+                        fit: BoxFit.fill
+                        
+                        ),
+                    
+                        
+                        
+                  ),
+                  
+                  child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ChatbotPage(
+                                        )));
+                          },
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        "ห้องสนทนา",
+                        style: TextStyle(
+                            fontFamily: 'AirbnbCerealBold',
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
+                            ),
+                      ),
+                      
+                      
+                      
+                     
+                    ],
+                  ),
+                  
+                ),
+                
+  )],
         ),
+        SizedBox(height: 10.0),
+        Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+                 Container(
+                  width: 150,
+                  height: 100,
+                  alignment: Alignment.bottomLeft,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/icons/from2.jpg'),
+                        fit: BoxFit.fill),
+
+                  ),
+                 child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DescriptionPages(
+                                        )));
+                          },
+                            child: Column(
+                    children: <Widget>[
+                      Text(
+                        "กรอกประวัติสุขภาพ",
+                        style: TextStyle(
+                            fontFamily: 'AirbnbCerealBold',
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black
+                            ),
+                        
+                      ),
+                    ],
+                  ),
+                 )
+                ),
+
+
+            ]),
+
+
+        SizedBox(height: 25.0),
         RoundedButton(
-              text: "บุคคลทั่วไป",
+              text: "สำหรับผู้ป่วย",
               press: () {
                 Navigator.push(
                   context,

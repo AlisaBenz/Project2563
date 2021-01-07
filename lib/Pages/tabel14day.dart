@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:ifightcovid19/Screens/Screening/screening_screen.dart';
+// import 'package:ifightcovid19/Screens/Screening/screening_screen.dart';
 
 class Tabel14dayPage extends StatefulWidget {
   Tabel14dayPage({Key key, this.title}) : super(key: key);
@@ -15,14 +15,14 @@ class _Tabel14dayPageState extends State<Tabel14dayPage> {
  
   @override
   Widget build(BuildContext context) {
-       return new MaterialApp(
-       debugShowCheckedModeBanner: false,
-                home: new Scaffold(
-                  backgroundColor: Colors.lightBlue[100],
+      //  return new MaterialApp(
+      //  debugShowCheckedModeBanner: false,
+              return Scaffold(
+                  // backgroundColor: Colors.lightBlue[100],
                   appBar: new AppBar(
                     elevation: 0.0,
                     centerTitle: true,
-                    title: new Text('',
+                    title: new Text('ข้อมูลบันทึกฟอร์ม14วัน',
                         style: new TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.w400,
@@ -38,18 +38,82 @@ class _Tabel14dayPageState extends State<Tabel14dayPage> {
                      backgroundColor: Colors.indigo,
                      
                   ),
-                  
-                  body: new SingleChildScrollView(
-                    padding: new EdgeInsets.only(bottom: 20.0),
-                    
-                    child: new Center(
-                    child: Column(children: [
-                    SizedBox(height: 10.0),
-                    Text('ข้อมูลบันทึกฟอร์ม 14 วัน',style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.bold),),
-                  ]),
-        ),
+
+                        body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          // SizedBox(height: 10.0),
+          //  Text('แบบคัดกรองโควิด 19 (COVID-19)',style: TextStyle(fontSize: 17.0,fontWeight: FontWeight.bold),),
+
+          SingleChildScrollView(
+            
+            child: DataTable(
+              sortAscending: true,
+              sortColumnIndex: 0,
+              columns: [
+                DataColumn(
+                    label: Text(
+                      "วันที่คัดกรอง",
+                      style: TextStyle(
+                          fontSize: 12.0, fontWeight: FontWeight.w900),
+                    ),
+                    tooltip: "Student USN Number"),
+                DataColumn(
+                    label: Text(
+                  "สถานะ",
+                  style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w900),
+                )),
+                // DataColumn(
+                //     label: Text(
+                //       "Marks",
+                //       style: TextStyle(
+                //           fontSize: 12.0, fontWeight: FontWeight.w900),
+                //     ),
+                //     numeric: true),
+                // DataColumn(
+                //     label: Text(
+                //       "Percentage",
+                //       style: TextStyle(
+                //           fontSize: 12.0, fontWeight: FontWeight.w900),
+                //     ),
+                //     numeric: true),
+              ],
+              rows: [
+                DataRow(
+                  cells: [
+                    DataCell(Text("16 ธันวาคม 2563")),
+                    DataCell(Text("ปกติ")),
+                    // DataCell(Text("99")),
+                    // DataCell(Text("99%")),
+                  ],
+                  selected: true,
+                ),
+                DataRow(cells: [
+                  DataCell(Text("17 ธันวาคม 2563")),
+                  DataCell(Text("ปกติ")),
+                  //  DataCell(Text("ปกติ"), showEditIcon: true),
+                  // DataCell(Text("85")),
+                  // DataCell(Text("87%")),
+                ]),
+                DataRow(cells: [
+                 DataCell(Text("18 ธันวาคม 2563")),
+                 DataCell(Text("ปกติ")),
+                //   DataCell(Text("Fill Marks"), placeholder: true),
+                //   DataCell(Text("89%")),
+                 ]),
+                 DataRow(cells: [
+                 DataCell(Text("19 ธันวาคม 2563")),
+                DataCell(Text("ปกติ")),
+                //   DataCell(Text("75")),
+                //   DataCell(Text("80%")),
+                ]),
+              ],
+            ),
+          ),
+        ],
       ),
-    ),
-       );
+    );
+       
   }
 }

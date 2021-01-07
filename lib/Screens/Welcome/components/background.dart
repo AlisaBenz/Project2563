@@ -4,7 +4,7 @@ class Background extends StatelessWidget {
   final Widget child;
   const Background({
     Key key,
-    @required this.child,
+    @required this.child, Color backgroundColor,
   }) : super(key: key);
 
   @override
