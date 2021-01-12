@@ -58,7 +58,7 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
     return new MaterialApp(
         debugShowCheckedModeBanner: false,
         home: new Scaffold(
-          backgroundColor: Colors.lightBlue[100],
+          backgroundColor: Colors.white,
           appBar: AppBar(
             title: Text(""),
             actions: [
@@ -74,6 +74,7 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
               //อยากขยับไปฝั่งซ้ายจัง ค่อยคิด
               padding: EdgeInsets.only(bottom: 20.0),
               child: new Card(
+                  color: Colors.green[200],
                   child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 2.0),
                 child: SafeArea(
@@ -81,17 +82,17 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      new Divider(
-                        height: 5.0,
-                        color: Colors.black,
-                      ),
+                      // new Divider(
+                      //   height: 5.0,
+                      //   color: Colors.black,
+                      // ),
                       new Padding(
                         padding: new EdgeInsets.all(4.0),
                       ),
 
                       // -------------------------------------------------------------------------------------------------------------------------------------------------
                       new Text(
-                        'ข้อที่ 4 : อยู่ใกล้ชิดกับผู้ป่วยยืนยัน COVID-19 (ใกล้กว่า 1 เมตร นานเกิน 5 นาที) ในช่วง 14 วันก่อน ',
+                        'ข้อที่ 5 : มีประวัติไปสถานที่ชุมนุมชน หรือสถานที่ที่มีการรวมกลุ่มคน เช่น ตลาดนัด ห้างสรรพสินค้า สถานพยาบาลหรือขนส่งสาธารณะ',
                         style: new TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
@@ -135,7 +136,7 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
                         padding: new EdgeInsets.all(4.0),
                       ),
                       new Text(
-                        'ข้อที่ 5 : มีประวัติไปสถานที่ชุมนุมชน หรือสถานที่ที่มีการรวมกลุ่มคน เช่น ตลาดนัด ห้างสรรพสินค้า สถานพยาบาลหรือขนส่งสาธารณะ',
+                        'ข้อที่ 6 : ผู้ป่วยประกอบอาชีพที่สัมผัสใกล้ชิดกับนักท่องเที่ยวต่างชาติ สถานที่แออัด หรือติดต่อคนจำนวนมาก',
                         style: new TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
@@ -173,7 +174,7 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
                           ),
                         ],
                       ),
-
+                      Spacer(),
                       RoundedButton(
                         text: "ถัดไป",
                         // color: kPrimaryLightColor,

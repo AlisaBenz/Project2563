@@ -57,7 +57,7 @@ class _AssessmentresultsPageState extends State<AssessmentresultsPage> {
                               Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                            Image(image: AssetImage('assets/icons/n&d.png'),  width: 250,),
+                            Image(image: AssetImage('assets/icons/n&d.png'),  width: 180,),
                             
                             ],
                              ),

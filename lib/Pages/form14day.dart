@@ -35,7 +35,7 @@ class Form14dayPageState extends State<Form14dayPage> with TickerProviderStateMi
 
   void _getTime() {
     final String formattedDateTime =
-        DateFormat('yyyy-MM-dd').format(DateTime.now()).toString(); // (\n kk:mm:ss) เป็นตัวเวลาอยู่หลังyyyy-MM-dd
+        DateFormat('MM-dd-yyyy').format(DateTime.now()).toString(); // (\n kk:mm:ss) เป็นตัวเวลาอยู่หลังyyyy-MM-dd
     setState(() {
       _timeString = formattedDateTime;
       print(_timeString);
@@ -75,7 +75,7 @@ class Form14dayPageState extends State<Form14dayPage> with TickerProviderStateMi
           _timeString.toString(),
              textAlign: TextAlign.center,
            style: TextStyle(
-            fontSize: 20,
+            fontSize: 15,
            fontWeight: FontWeight.bold,
             ),
           ),

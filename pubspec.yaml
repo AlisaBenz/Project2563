@@ -26,6 +26,7 @@ dependencies:
   fluttertoast: ^7.1.1
   # fluttertoast: ^2.0.7
   intro_slider: ^2.2.8
+  # intro_slider: ^1.0.8
   bottom_navy_bar: ^5.3.2
   http: ^0.12.0+4
   splashscreen: ^1.2.0
@@ -93,7 +94,8 @@ flutter:
       - assets/images/
       - assets/icons/
       - assets/icons/heart.png
-      - assets/ifightcivid19-nlia-d112a0bd781d.json
+      - assets/flutterbot-wsg9-bf4e207faea5.json
+      # ifightcivid19-nlia-d112a0bd781d.json
       # - assets/BirthDayWisher-27d44bfaad84.json
       # - assets/ifightcivid19-nlia-d38b4d515079.json
       

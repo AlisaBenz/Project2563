@@ -64,49 +64,31 @@ class _Tabel14dayPageState extends State<Tabel14dayPage> {
                   "สถานะ",
                   style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w900),
                 )),
-                // DataColumn(
-                //     label: Text(
-                //       "Marks",
-                //       style: TextStyle(
-                //           fontSize: 12.0, fontWeight: FontWeight.w900),
-                //     ),
-                //     numeric: true),
-                // DataColumn(
-                //     label: Text(
-                //       "Percentage",
-                //       style: TextStyle(
-                //           fontSize: 12.0, fontWeight: FontWeight.w900),
-                //     ),
-                //     numeric: true),
+            
               ],
               rows: [
                 DataRow(
                   cells: [
                     DataCell(Text("16 ธันวาคม 2563")),
                     DataCell(Text("ปกติ")),
-                    // DataCell(Text("99")),
-                    // DataCell(Text("99%")),
+                   
                   ],
                   selected: true,
                 ),
                 DataRow(cells: [
                   DataCell(Text("17 ธันวาคม 2563")),
                   DataCell(Text("ปกติ")),
-                  //  DataCell(Text("ปกติ"), showEditIcon: true),
-                  // DataCell(Text("85")),
-                  // DataCell(Text("87%")),
+                
                 ]),
                 DataRow(cells: [
                  DataCell(Text("18 ธันวาคม 2563")),
                  DataCell(Text("ปกติ")),
-                //   DataCell(Text("Fill Marks"), placeholder: true),
-                //   DataCell(Text("89%")),
+              
                  ]),
                  DataRow(cells: [
                  DataCell(Text("19 ธันวาคม 2563")),
                 DataCell(Text("ปกติ")),
-                //   DataCell(Text("75")),
-                //   DataCell(Text("80%")),
+                
                 ]),
               ],
             ),

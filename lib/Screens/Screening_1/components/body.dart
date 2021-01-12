@@ -49,7 +49,7 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
     return new MaterialApp(
         debugShowCheckedModeBanner: false,
         home: new Scaffold(
-          backgroundColor: Colors.lightBlue[100],
+          backgroundColor: Colors.white,
           appBar: AppBar(
             title: Text(""),
             actions: [
@@ -65,6 +65,7 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
               //อยากขยับไปฝั่งซ้ายจัง ค่อยคิด
               padding: EdgeInsets.only(bottom: 20.0),
               child: new Card(
+                color: Colors.green[200],
                   child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 2.0),
                 child: SafeArea(
@@ -74,7 +75,7 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
                     children: [
                       //  -------------------------------------------------------------------------------------------------------------------------------------------------
                       new Text(
-                        ' ข้อที่ 2 : ผู้ป่วยมีอาการระบบทางเดินหายใจ อย่างใดอย่างหนึ่งดังต่อไปนี้ "ไอ น้ำมูก เจ็บคอ หายใจเหนื่อย หรือหายใจลำบาก" ',
+                        ' ข้อที่ 3 : ผู้ป่วยมีประวัติเดินทางไปยัง หรือ มาจาก หรือ อาศัยอยู่ในพื้นที่เกิดโรค COVID-19 ในช่วงเวลา 14 วัน ก่อนป่วย ',
                         style: new TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
@@ -114,16 +115,16 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
                         ],
                       ),
 
-                      new Divider(
-                        height: 5.0,
-                        color: Colors.black,
-                      ),
+                      // new Divider(
+                      //   height: 5.0,
+                      //   color: Colors.black,
+                      // ),
                       new Padding(
                         padding: new EdgeInsets.all(4.0),
                       ),
 
                       new Text(
-                        'ข้อที่ 3 : ผู้ป่วยมีประวัติเดินทางไปยัง หรือ มาจาก หรือ อาศัยอยู่ในพื้นที่เกิดโรค COVID-19 ในช่วงเวลา 14 วัน ก่อนป่วย',
+                        'ข้อที่ 4 : อยู่ใกล้ชิดกับผู้ป่วยยืนยัน COVID-19 (ใกล้กว่า 1 เมตร นานเกิน 5 นาที) ในช่วง 14 วันก่อน',
                         style: new TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
@@ -162,7 +163,7 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
                           ),
                         ],
                       ),
-
+                      Spacer(),
                       RoundedButton(
                         text: "ถัดไป",
                         // color: kPrimaryLightColor,

@@ -1,15 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ifightcovid19/Screens/Screening_4/screening_screen.dart';
-
-// import 'package:ifightcovid19/Screens/Login/components/background.dart';
-// import 'package:ifightcovid19/Screens/Screening/screening_screen.dart';
-// import 'package:ifightcovid19/Screens/Signup/signup_screen.dart';
-// import 'package:ifightcovid19/components/already_have_an_account_acheck.dart';
-
-// import 'package:ifightcovid19/components/rounded_input_field.dart';
-// import 'package:ifightcovid19/components/rounded_password_field.dart';
-// import 'package:flutter_svg/svg.dart';
-// import 'package:ifightcovid19/components/already_have_an_account_acheck.dart';
 
 import 'package:ifightcovid19/components/rounded_button.dart';
 
@@ -60,7 +49,7 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
     return new MaterialApp(
         debugShowCheckedModeBanner: false,
         home: new Scaffold(
-          backgroundColor: Colors.lightBlue[100],
+          backgroundColor: Colors.white,
           appBar: AppBar(
             title: Text(""),
             actions: [
@@ -75,7 +64,9 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
           body: new Container(
               //อยากขยับไปฝั่งซ้ายจัง ค่อยคิด
               padding: EdgeInsets.only(bottom: 20.0),
+             
               child: new Card(
+                     color: Colors.green[200],
                   child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 2.0),
                 child: SafeArea(
@@ -91,7 +82,7 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
                         padding: new EdgeInsets.all(4.0),
                       ),
                       new Text(
-                        ' ข้อที่ 6 : ผู้ป่วยประกอบอาชีพที่สัมผัสใกล้ชิดกับนักท่องเที่ยวต่างชาติ สถานที่แออัด หรือติดต่อคนจำนวนมาก ',
+                        ' ข้อที่ 7 : เป็นบุคลากรทางการแพทย์หรือสาธารณสุข ที่สัมผัสกับผู้ป่วยเข้าเกณฑ์สอบสวนติดเชื้อโควิด-19',
                         style: new TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
@@ -128,15 +119,15 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
                           ),
                         ],
                       ),
-                      new Divider(
-                        height: 5.0,
-                        color: Colors.black,
-                      ),
+                      // new Divider(
+                      //   height: 5.0,
+                      //   color: Colors.black,
+                      // ),
                       new Padding(
                         padding: new EdgeInsets.all(4.0),
                       ),
                       new Text(
-                        'ข้อที่ 7 : เป็นบุคลากรทางการแพทย์หรือสาธารณสุข ที่สัมผัสกับผู้ป่วยเข้าเกณฑ์สอบสวนติดเชื้อโควิด-19',
+                        'ข้อที่ 8 : มีผู้ใกล้ชิดป่วยเป็นไข้หวัดพร้อมกัน มากกว่า 5 คน ในช่วงสัปดาห์ที่ป่วย',
                         style: new TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
@@ -176,6 +167,7 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
                       new Column(),
                       new Column(),
                       new Column(),
+                      
                       RoundedButton(
                         text: "ถัดไป",
                         // color: kPrimaryLightColor,
@@ -185,7 +177,7 @@ class BodyPageState extends State<BodyPage> with TickerProviderStateMixin {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return ScreeningScreenFour();
+                                return ScreeningresultsScreen();
                               },
                             ),
                           );

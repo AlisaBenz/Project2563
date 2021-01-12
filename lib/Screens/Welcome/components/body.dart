@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ifightcovid19/Pages/Description.dart';
 import 'package:ifightcovid19/Pages/chatbot.dart';
-// import 'package:ifightcovid19/Pages/chatbot.dart';
-//  import 'package:ifightcovid19/constants.dart';
-// import 'package:flutter_svg/svg.dart';
+import 'package:ifightcovid19/Pages/healthform.dart';
 import 'package:ifightcovid19/Screens/Login/login_screen.dart';
 import 'package:ifightcovid19/Screens/Signup/signup_screen.dart';
 import 'package:ifightcovid19/Screens/Welcome/components/background.dart';
 import 'package:ifightcovid19/components/rounded_button.dart';
-// import 'package:ifightcovid19/pages2/risky.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -137,7 +134,7 @@ class Body extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => DescriptionPages(
+                                    builder: (context) => HealthformPages(
                                         )));
                           },
                             child: Column(
@@ -177,8 +174,6 @@ class Body extends StatelessWidget {
             ),
                RoundedButton(
                text: "สำหรับแพทย์/พยาบาล",
-                //color: kPrimaryLightColor,
-                //textColor: Colors.black,
                press: () {
                  Navigator.push(
                    context,
