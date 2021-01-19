@@ -10,10 +10,6 @@ class PatientgraphPage extends StatefulWidget {
   
 
   PatientgraphPage({Key key, this.child, this.title}) : super(key: key);
-  
-   
-
-
 
   _PatientgraphPageState createState() => _PatientgraphPageState();
 }
@@ -223,7 +219,7 @@ class _PatientgraphPageState extends State<PatientgraphPage> {
                     child: Column(
                       children: <Widget>[
                         Text(
-                            'รายงานภาพรวมข้อมูลผู้ป่วยในโรงพยาบาล',style: TextStyle(fontSize: 17.0,fontWeight: FontWeight.bold),),
+                            'รายงานภาพรวมข้อมูลผู้ป่วย',style: TextStyle(fontSize: 17.0,fontWeight: FontWeight.bold),),
                             SizedBox(height: 10.0,),
                          Expanded(
                           child: charts.PieChart(

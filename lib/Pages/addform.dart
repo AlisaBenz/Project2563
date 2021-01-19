@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ifightcovid19/Screens/Screening/components/body.dart';
 
 
 
@@ -165,9 +166,17 @@ import 'package:flutter/material.dart';
                 MaterialButton(
                  color: Colors.indigo,
                  child: Text('บันทึกฟอร์ม', style: TextStyle(color: Colors.white)),
-                 onPressed: () {   //แอดไปยังหน้า ประเมินผู้ป่วย
-                   //Do Something
-                 },
+                 onPressed: () {
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return BodyPage();
+                    },
+                  ),
+                );
+                  //Do Something
+                },
                ),
            ]),
     

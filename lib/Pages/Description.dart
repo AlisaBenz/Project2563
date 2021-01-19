@@ -37,7 +37,7 @@ class DescriptionPages extends StatelessWidget {
                 
                     
                   new Card(
-                    color: Colors.green[300],
+                    color: Colors.green[200],
                     margin: new EdgeInsets.only(
                         left: 20.0, right: 20.0, top: 8.0, bottom: 5.0),
                     shape: RoundedRectangleBorder(
