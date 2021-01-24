@@ -1,8 +1,11 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// import 'package:ifightcovid19/Pages/assessment.dart';
+import 'package:ifightcovid19/Screens/Screeningresults/screeningresults_screen.dart';
+// import 'package:ifightcovid19/Screens/Screeningresults/screeningresults_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:ifightcovid19/Screens/Screening/screening_screen.dart';
+// import 'package:ifightcovid19/Screens/Screening/screening_screen.dart';
  
 // ignore: must_be_immutable
 class DescriptionPages extends StatelessWidget {
@@ -83,7 +86,7 @@ class DescriptionPages extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return ScreeningScreen();
+                            return ScreeningresultsScreen();
                           },
                         ),
                       ); //แอดไปยังหน้า ประเมินผู้ป่วย

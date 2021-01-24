@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-
 import 'package:flutter/cupertino.dart';
 
  class Result extends StatelessWidget { 
@@ -68,11 +66,11 @@ import 'package:flutter/cupertino.dart';
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold), 
             textAlign: TextAlign.center, 
           ), //Text 
-          //  Text( 
-          //    'คะแนนรวม ' '$resultScore', 
-          //    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold), 
-          //    textAlign: TextAlign.center, 
-          //  ), //Text 
+           Text( 
+             'คะแนนรวม ' '$resultScore', 
+             style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold), 
+             textAlign: TextAlign.center, 
+           ), //Text 
           FlatButton( 
             child: Text( 
               'ทำแบบประเมินตนอีกครั้ง', 
@@ -84,15 +82,18 @@ import 'package:flutter/cupertino.dart';
             textColor: Colors.blue, 
             onPressed: resetHandler, 
           ), //FlatButton 
-        ], //<Widget>[] 
+        ], 
+        //<Widget>[] 
       ), 
       
       //Column 
-         ))])))))); //Center 
+         )
+         
+         )
+          
+         
+         ])))))); //Center 
   } 
 } 
 
 
-
-
- 

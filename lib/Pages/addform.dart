@@ -2,7 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ifightcovid19/Screens/Screening/components/body.dart';
+import 'package:ifightcovid19/Pages/assessment.dart';
+// import 'package:ifightcovid19/Screens/Screening/components/body.dart';
 
 
 
@@ -171,7 +172,7 @@ import 'package:ifightcovid19/Screens/Screening/components/body.dart';
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return BodyPage();
+                      return AssessmentPage();
                     },
                   ),
                 );
